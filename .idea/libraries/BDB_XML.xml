@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="BDB XML">
+    <CLASSES>
+      <root url="jar://C:/Program Files (x86)/Oracle/Berkeley DB XML 6.0.18/jar/db.jar!/" />
+      <root url="jar://C:/Program Files (x86)/Oracle/Berkeley DB XML 6.0.18/jar/dbxml.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
