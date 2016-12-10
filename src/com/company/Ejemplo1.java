@@ -1,8 +1,11 @@
 package com.company;
 
+import com.sleepycat.db.DatabaseException;
+import com.sleepycat.db.Environment;
+import com.sleepycat.db.EnvironmentConfig;
 import com.sleepycat.dbxml.*;
-import com.sleepycat.db.*;
-import java.io.*;
+
+import java.io.File;
 
 class Ejemplo1 {
     public static void main(String args[]) throws Throwable{
@@ -11,8 +14,10 @@ class Ejemplo1 {
         XmlManager myManager = null;
         XmlContainer myContainer = null;
 
+
         try {
-            //Crear enviroment
+
+            /* Crear Entorno */
             EnvironmentConfig envConf = new EnvironmentConfig();
             envConf.setAllowCreate(true); // If the environment does not exits, create it.
             envConf.setInitializeCache(true); // Turn on the shared memory region.
@@ -21,7 +26,7 @@ class Ejemplo1 {
             envConf.setTransactional(true); // Turn on the transactional subsystem.
             myEnv = new Environment(envHome, envConf);
 
-            //Crear manejador para Container asignando enviroment
+            //Crear manejador para Container asignando Entorno
             XmlManagerConfig managerConfig = new XmlManagerConfig();
             managerConfig.setAdoptEnvironment(true);
             managerConfig.setAllowAutoOpen(true);
@@ -34,47 +39,50 @@ class Ejemplo1 {
             myContainerConfig.setContainerType(XmlContainer.NodeContainer);
 
             //Crear container
-            //myContainer = myManager.createContainer("db/Container.bdbxml", myContainerConfig);
-            myContainer = myManager.openContainer("db/myContainer.bdbxml", myContainerConfig); //db está en dentro de la carpeta del enviroment
-/*
-            //Añadir ficheros al container
-            String[] fileNames = leerFicheros();
+            if(myManager.existsContainer("db/myContainer.bdbxml") == 0){ //Container no existe, lo creamos y añade los documentos
+                myContainer = myManager.createContainer("db/myContainer.bdbxml", myContainerConfig);
 
-            if (fileNames == null) //si el fichero está vacío
-                System.out.println("No hay ficheros en el directorio especificado");
-            else { // si hay archivos
-                for (int i = 0, fileNamesLength = fileNames.length; i < fileNamesLength; i++) {
-                    String fileName1 = fileNames[i];
-                    String fileName = "data\\simpleData\\".concat(fileName1); //nombre y localización del archivo
-                    String docName = fileName1.substring(0, fileName1.indexOf(".")); //nombre del archivo sin extención
+                //Añadir documentos al container
+                String[] fileNames = leerFicheros();
+                if (fileNames == null) //si el fichero está vacío
+                    System.out.println("No hay ficheros en el directorio especificado");
+                else { // si hay archivos
+                    for (String fileName1 : fileNames) {
+                        String fileName = "data\\simpleData\\".concat(fileName1); //nombre y localización del archivo
+                        String docName = fileName1.substring(0, fileName1.indexOf(".")); //nombre del archivo sin extención
 
-                    XmlInputStream theStream = myManager.createLocalFileInputStream(fileName);
-                    // Do the actual put
-                    myContainer.putDocument(docName, theStream); // The document's name, The document.
-                    System.out.println("Añadiendo documento: " + docName + " desde fichero " + fileName + " a container: " + myContainer.getName() + ".");
+                        XmlInputStream theStream = myManager.createLocalFileInputStream(fileName);
+                        // Do the actual put
+                        myContainer.putDocument(docName, theStream); // The document's name, The document.
+                        System.out.println("Añadiendo documento: " + docName + " desde fichero " + fileName + " a container: " + myContainer.getName() + ".");
+                    }
                 }
+            }else{ // Container existe, lo abrimos
+                System.out.println("El container \"myContainer\" ya existe.\nAbriendo container.\n");
+                myContainer = myManager.openContainer("db/myContainer.bdbxml", myContainerConfig); //db está en dentro de la carpeta del entorno
             }
-*/
+
             // Do BDB XML work here.
 
-            // Get a query context
+            // Obtener el contexto de la consulta
             XmlQueryContext context = myManager.createQueryContext();
-            // Declare a namespace
-                       // context.setNamespace("fruits", "http://groceryItem.dbxml/fruits");
-            // Declare the query string. Find all the product documents
-            // in the fruits namespace.
-                        String myQuery = "collection('db/myContainer.bdbxml')/product/category";
-            // Perform the query.
-                        XmlResults results = myManager.query(myQuery, context);
 
+            // Declarar un namespace
+            //context.setNamespace("fruits", "http://groceryItem.dbxml/fruits");
 
-            // Show the size of the result set
-            String message = "Found ";
-            message += results.size() + " documents for query: '";
+            // Declarar la consulta en un string
+            String myQuery = "collection('db/myContainer.bdbxml')/product/category";
+
+            // Realizar la consulta
+            XmlResults results = myManager.query(myQuery, context);
+
+            // Mostrar el tamaño del resultado de la consulta
+            String message = "Encontrados ";
+            message += results.size() + " documentos para la consulta: '";
             message += myQuery + "'\n";
             System.out.println(message);
 
-            // Display the result set
+            // Mostrar el resultado de la consulta
             XmlValue value = results.next();
             while (value != null) {
                 XmlDocument theDoc = value.asDocument();
@@ -90,8 +98,7 @@ class Ejemplo1 {
             results.delete();
 
             } catch (DatabaseException de) {
-            // Exception handling goes here
-            System.out.println("Database Error: " +de.getMessage());
+            System.out.println("Database error: " +de.getMessage());
 
         }
         finally {
@@ -103,8 +110,7 @@ class Ejemplo1 {
                     myManager.close();
                 }
             } catch (XmlException ce) {
-                // Exception handling goes here
-                System.out.println("Database Error: " +ce.getMessage());
+                System.out.println("Database error: " +ce.getMessage());
             }
         }
 
@@ -114,7 +120,7 @@ class Ejemplo1 {
      * Método para leer los ficheros en un directorio     *
      * @return un array de strings con los nombres de los ficheros incluyendo la extención.
      */
-    public static String[] leerFicheros(){
+    private static String[] leerFicheros(){
         // Aquí la carpeta donde queremos buscar
         File dir = new File("data\\simpleData\\");
         String[] ficheros = dir.list();
