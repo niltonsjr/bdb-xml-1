@@ -1,4 +1,4 @@
-package com.company;
+package com.bdbxml;
 
 import com.sleepycat.db.DatabaseException;
 import com.sleepycat.db.Environment;
@@ -9,7 +9,7 @@ import java.io.File;
 
 class Ejemplo1 {
     public static void main(String args[]) throws Throwable{
-        Environment myEnv = null;
+        Environment myEnv;
         File envHome = new File("myEnv/");
         XmlManager myManager = null;
         XmlContainer myContainer = null;
