@@ -73,7 +73,7 @@ class Ejemplo1 {
             //context.setNamespace("fruits", "http://groceryItem.dbxml/fruits");
 
             // Declarar la consulta en un string
-            String myQuery = "collection('db/myContainer.bdbxml')/product/item/text()";
+            String myQuery = "collection('db/myContainer.bdbxml')/product[item=\"Yellow Sapote\"]";
 
             XmlQueryExpression qe = myManager.prepare(myQuery, context);
             // Realizar la consulta
@@ -98,8 +98,8 @@ class Ejemplo1 {
                 System.out.println(message);
                 value = results.next();
             }
+            qe.delete();
             results.delete();
-
 
             //-------------------------------//
 

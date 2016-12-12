@@ -1,8 +1,7 @@
 package com.bdbxml;
 
-import com.sleepycat.dbxml.*;
-
-public class BDBXML {
+public class Ejemplo2 {
+    /*
     XmlManager xmlManager = null;
     XmlContainer xmlContainer = null;
 
@@ -156,4 +155,5 @@ public class BDBXML {
         bdbXML.modifyDocument();
         bdbXML.updateDocument();
     }
+    */
 }
