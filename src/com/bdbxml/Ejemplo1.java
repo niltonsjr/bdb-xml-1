@@ -13,6 +13,7 @@ class Ejemplo1 {
         File envHome = new File("myEnv/");
         XmlManager myManager = null;
         XmlContainer myContainer = null;
+        XmlContainer nuevoContainer = null;
 
 
         try {
@@ -40,6 +41,7 @@ class Ejemplo1 {
 
             //Crear container
             if(myManager.existsContainer("db/myContainer.bdbxml") == 0){ //Container no existe, lo creamos y añade los documentos
+                System.out.println("El container \"myContainer\" no existe.\nCreando container.\n");
                 myContainer = myManager.createContainer("db/myContainer.bdbxml", myContainerConfig);
 
                 //Añadir documentos al container
@@ -52,7 +54,7 @@ class Ejemplo1 {
                         String docName = fileName1.substring(0, fileName1.indexOf(".")); //nombre del archivo sin extención
 
                         XmlInputStream theStream = myManager.createLocalFileInputStream(fileName);
-                        // Do the actual put
+                        //Añadir documento
                         myContainer.putDocument(docName, theStream); // The document's name, The document.
                         System.out.println("Añadiendo documento: " + docName + " desde fichero " + fileName + " a container: " + myContainer.getName() + ".");
                     }
@@ -71,10 +73,11 @@ class Ejemplo1 {
             //context.setNamespace("fruits", "http://groceryItem.dbxml/fruits");
 
             // Declarar la consulta en un string
-            String myQuery = "collection('db/myContainer.bdbxml')/product/category";
+            String myQuery = "collection('db/myContainer.bdbxml')/product/item/text()";
 
+            XmlQueryExpression qe = myManager.prepare(myQuery, context);
             // Realizar la consulta
-            XmlResults results = myManager.query(myQuery, context);
+            XmlResults results = qe.execute(context);
 
             // Mostrar el tamaño del resultado de la consulta
             String message = "Encontrados ";
@@ -97,6 +100,68 @@ class Ejemplo1 {
             }
             results.delete();
 
+
+            //-------------------------------//
+
+            //Crear nuevo container y añadir documento a container.
+            if(myManager.existsContainer("db/nuevoContainer.bdbxml") == 0){ //Container no existe, lo creamos y añade los documentos
+                System.out.println("El container \"nuevoContainer\" no existe.\nCreando container.\n");
+                nuevoContainer = myManager.createContainer("db/nuevoContainer.bdbxml", myContainerConfig);
+
+                //Añadir documento al container
+                String contenido = "<?xml version=\"1.0\"?><lista_productos>\n</lista_productos>";
+                // Añadir documento
+                nuevoContainer.putDocument("lista_productos.xml", contenido); // The document's name, The document.
+                System.out.println("Añadiendo documento: lista_productos.xml a container: " + nuevoContainer.getName() + ".");
+
+            }else{ // Container existe, lo abrimos
+                System.out.println("El container \"nuevoContainer\" ya existe.\nAbriendo container.\n");
+                nuevoContainer = myManager.openContainer("db/nuevoContainer.bdbxml", myContainerConfig); //db está en dentro de la carpeta del entorno
+            }
+
+            // Obtener el contexto de la consulta
+            XmlQueryContext context2 = myManager.createQueryContext();
+/*
+            //Obtener todos los nodos de los documentos del container myContainer y añadirlos al documento del container nuevoContainer
+            String insertar = "copy $c := doc(\"dbxml:db/myContainer.bdbxml/ZapoteBlanco.xml\")\n" +
+                    "modify (insert nodes $c/product,\n" +
+                    "replace value of node $c/b2 with \"replacement value\")\n" +
+                    "return $c"
+
+
+                    "for $i in doc(\"dbxml:db/myContainer.bdbxml/ZapoteBlanco.xml\")/product return " +
+                    "insert $i into doc(\"dbxml:/db/nuevoContainer.bdbxml/lista_productos.xml\")/lista_productos";
+                    //"insert nodes <b4>inserted child</b4> into doc(\"dbxml:/db/nuevoContainer.bdbxml/lista_productos.xml\")/lista_productos";
+
+            // Realizar la insercción
+            XmlResults res_inserc = myManager.query(insertar, context2);
+*/
+            // Verificar contenido del container nuevoContainer
+            String consulta = "collection('db/nuevoContainer.bdbxml')/*";
+            XmlResults resultado = myManager.query(consulta, context2);
+            System.out.println("Consultando contenido de container nuevoContainer.\n");
+
+            // Mostrar el tamaño del resultado de la consulta
+            String message2 = "Encontrados ";
+            message2 += resultado.size() + " documentos para la consulta: '";
+            message2 += consulta + "'\n";
+            System.out.println(message2);
+
+            // Mostrar el resultado de la consulta
+            XmlValue res_consulta = resultado.next();
+            while (res_consulta != null) {
+                XmlDocument theDoc = res_consulta.asDocument();
+                String docName = theDoc.getName();
+                String docString = res_consulta.asString();
+                message2 = "Documento ";
+                message2 += theDoc.getName() + ":\n";
+                message2 += res_consulta.asString();
+                message2 += "\n===============================\n";
+                System.out.println(message2);
+                res_consulta = resultado.next();
+            }
+            resultado.delete();
+
             } catch (DatabaseException de) {
             System.out.println("Database error: " +de.getMessage());
 
@@ -105,6 +170,9 @@ class Ejemplo1 {
             try {
                 if(myContainer != null){
                     myContainer.close();
+                }
+                if(nuevoContainer != null){
+                    nuevoContainer.close();
                 }
                 if (myManager != null) {
                     myManager.close();
