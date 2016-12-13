@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6613376a-2774-43ee-9e0f-76b9c2de73fc" name="New changelist" comment="Cambio en clase Ejemplo1">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/bdbxml/Ejemplo2.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/nilto.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/nilto.xml" />
+    <list default="true" id="6613376a-2774-43ee-9e0f-76b9c2de73fc" name="New changelist" comment="Clases de ejemplo de BDB XML">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDbEnv.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForMetaData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithContext.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/replaceIndex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/retrieveDB.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleAdd.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleContainerInEnv.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="335cbc1b-2ec5-43af-84a2-0dafcc98f883" name="Rejected commit: New changelist" comment="Se comprueba si existe el container antes de crearlo y añadir los archivos." />
@@ -546,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481569829605</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Clases de ejemplo de BDB XML">
+      <created>1481653808014</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1481653808014</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -627,7 +649,8 @@
     <MESSAGE value="Se comprueba si existe el container antes de crearlo y añadir los archivos." />
     <MESSAGE value="Pequeños cambios." />
     <MESSAGE value="Cambio en clase Ejemplo1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio en clase Ejemplo1" />
+    <MESSAGE value="Clases de ejemplo de BDB XML" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clases de ejemplo de BDB XML" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
