@@ -42,8 +42,7 @@ class updateDocument
 
 	//query for all the documents that we want to update
 	XmlResults results = mgr.query(txn, fullQuery, context, null);
-	System.out.println("Found " + results.size() + " matching the expression '"
-			   + fullQuery + "'.");
+	System.out.println("Found " + results.size() + " matching the expression '" + fullQuery + "'.");
 
 	XmlValue value = results.next();
 	while (value != null) {
@@ -77,15 +76,13 @@ class updateDocument
 					  String docString )
 	throws Throwable {
 	//Get the substring that we want to replace
-	String inventory = getValue(dbXML, document,
-				    "fn:string(/*/inventory/inventory)", context);
+	String inventory = getValue(dbXML, document, "fn:string(/*/inventory/inventory)", context);
 	String retVal = new String();
 
 	//Find the substring in the original document string
 	int pos = docString.indexOf(inventory);
 	if (pos == -1) {
-	    System.err.println("Error: inventory string: '" + inventory +
-			       "' not found in document string:");
+	    System.err.println("Error: inventory string: '" + inventory + "' not found in document string:");
 	    System.err.println(docString);
 
 	} else {
@@ -102,8 +99,7 @@ class updateDocument
 
 	    //Perform the replace
 	    strbuff.replace(pos, endPos, newVal);
-	    System.out.println("Inventory was " + inventory + ", it is now " +
-			       newVal + ".");
+	    System.out.println("Inventory was " + inventory + ", it is now " + newVal + ".");
 	    retVal = strbuff.toString();
 	}
 
@@ -115,28 +111,26 @@ class updateDocument
 	throws Throwable {
 
         //Perform the query
-	// The document provides the context for the query
+	    // The document provides the context for the query
         XmlQueryExpression queryExpr = mgr.prepare(query, context);
-	XmlValue docVal = new XmlValue(theDocument);
+	    XmlValue docVal = new XmlValue(theDocument);
         XmlResults result = queryExpr.execute(docVal, context, null);
 
         //We require a result set size of 1.
         if (result.size() != 1) {
-	    System.err.println("Error! query '" + query +
-			       "' returned a result size size != 1");
-	    throw new Exception( "getValue found result set not equal to 1.");
+            System.err.println("Error! query '" + query + "' returned a result size size != 1");
+            throw new Exception( "getValue found result set not equal to 1.");
         }
 
         //Get the value. If we allowed the result set to be larger than size 1,
         //we would have to loop through the results, processing each as is
         //required by our application.
         XmlValue value = result.next();
-	String retVal = value.asString();
-	result.delete();
-	queryExpr.delete();
+	    String retVal = value.asString();
+	    result.delete();
+	    queryExpr.delete();
 
         return retVal;
-
     }
 
     //Utility function to clean up objects, exceptions or not,
@@ -144,9 +138,9 @@ class updateDocument
     private static void cleanup(myDbEnv env, XmlContainer openedContainer) {
 	try {
 	    if (openedContainer != null)
-		openedContainer.delete();
+	        openedContainer.delete();
 	    if (env != null)
-		env.cleanup();
+	        env.cleanup();
 	} catch (Exception e) {
 	    // ignore exceptions on close
 	}
@@ -155,18 +149,7 @@ class updateDocument
     public static void main(String args[])
 	throws Throwable {
 
-	File path2DbEnv = null;
-	for(int i = 0; i < args.length; ++i) {
-	    if (args[i].startsWith("-")) {
-		switch(args[i].charAt(1)) {
-		case 'h':
-		    path2DbEnv = new File( args[++i] );
-		    break;
-		default:
-                    usage();
-		}
-            }
-	}
+	File path2DbEnv = new File(mdConst.envHome);
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
             usage();
@@ -188,29 +171,27 @@ class updateDocument
 
 	    // Start a transaction
 	    txn = theMgr.createTransaction();
+	    XmlQueryContext context = theMgr.createQueryContext();
+	    context.setNamespace( "fruits", "http://groceryItem.dbxml/fruits");
+	    context.setNamespace( "vegetables", "http://groceryItem.dbxml/vegetables");
+	    context.setNamespace( "desserts", "http://groceryItem.dbxml/desserts");
 
-            XmlQueryContext context = theMgr.createQueryContext();
-            context.setNamespace( "fruits", "http://groceryItem.dbxml/fruits");
-            context.setNamespace( "vegetables",
-				  "http://groceryItem.dbxml/vegetables");
-            context.setNamespace( "desserts", "http://groceryItem.dbxml/desserts");
+	    //update the document that describes Zapote Blanco (a fruit)
+        String query = "/fruits:item[fn:string(product) = 'Zapote Blanco']";
+        doUpdateDocument(theMgr, openedContainer, query, context, txn);
 
-            //update the document that describes Zapote Blanco (a fruit)
-            String query = "/fruits:item[fn:string(product) = 'Zapote Blanco']";
-            doUpdateDocument(theMgr, openedContainer, query, context, txn);
+        //Commit the writes. This causes the container write operations
+        //  to be saved to the container.
+        txn.commit();
 
-            //Commit the writes. This causes the container write operations
-            //  to be saved to the container.
-            txn.commit();
 	} catch (Exception e) {
-	    System.err.println("Error performing document update against "
-			       + theContainer);
+	    System.err.println("Error performing document update against " + theContainer);
 	    System.err.println("   Message: " + e.getMessage());
 	    //In the event of an error, we abort the operation
 	    // The database is left in the same state as it was in before
 	    // we started this operation.
 	    if ( txn != null ) {
-		txn.abort();
+	        txn.abort();
 	    }
 	    throw e;
 

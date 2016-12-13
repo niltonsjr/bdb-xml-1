@@ -73,19 +73,7 @@ class queryWithDocumentNames
     public static void main(String args[])
 	throws Throwable {
 
-	File path2DbEnv = null;
-
-	for(int i = 0; i < args.length; ++i) {
-            if (args[i].startsWith("-")) {
-		switch(args[i].charAt(1)) {
-		case 'h':
-		    path2DbEnv = new File( args[++i] );
-		    break;
-		default:
-                    usage();
-		}
-            }
-	}
+	File path2DbEnv = new File(mdConst.envHome);
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
             usage();
@@ -115,17 +103,10 @@ class queryWithDocumentNames
             // XmlQueryContext used for this query. Also, each document name
 	    // was set by exampleLoadContainer when the document was loaded into
 	    // the XmlContainer.
-            doContextQuery(theMgr, "/*[dbxml:metadata('dbxml:name')='ZuluNut.xml']",
-			   context);
-            doContextQuery(theMgr,
-			   "/*[dbxml:metadata('dbxml:name')='TrifleOrange.xml']",
-			   context);
-            doContextQuery(theMgr,
-			   "/*[dbxml:metadata('dbxml:name')='TriCountyProduce.xml']",
-			   context);
-            doContextQuery(theMgr,
-			   "/fruits:item/product[text()=\"Zulu Nut\"]",
-			   context);
+            doContextQuery(theMgr, "/*[dbxml:metadata('dbxml:name')='ZuluNut.xml']", context);
+            doContextQuery(theMgr, "/*[dbxml:metadata('dbxml:name')='TrifleOrange.xml']", context);
+            doContextQuery(theMgr, "/*[dbxml:metadata('dbxml:name')='TriCountyProduce.xml']", context);
+            doContextQuery(theMgr, "/fruits:item/product[text()=\"Zulu Nut\"]", context);
 	} catch (Exception e) {
             System.err.println("Error performing query against " + theContainer);
             System.err.println("   Message: " + e.getMessage());

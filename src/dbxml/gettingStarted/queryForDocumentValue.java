@@ -89,18 +89,14 @@ class queryForDocumentValue
             //Obtain information of interest from the document. Note that the
             //  wildcard in the query expression allows us to not worry about what
             //  namespace this document uses.
-            String item = getValue(mgr, theDocument, "fn:string(/*/product)",
-				   context);
-            String price = getValue(mgr, theDocument,
-				    "fn:string(/*/inventory/price)", context);
-            String inventory = getValue(mgr, theDocument,
-					"fn:string(/*/inventory/inventory)", context);
+            String item = getValue(mgr, theDocument, "fn:string(/*/product)", context);
+            String price = getValue(mgr, theDocument, "fn:string(/*/inventory/price)", context);
+            String inventory = getValue(mgr, theDocument, "fn:string(/*/inventory/inventory)", context);
 
             System.out.println("\t" + item + " : " + price + " : " + inventory);
             value = results.next();
 	}
-	System.out.println(results.size() + " results returned for query '" +
-			   fullQuery + "'.");
+	System.out.println(results.size() + " results returned for query '" + fullQuery + "'.");
 	results.delete();
     }
 
@@ -120,19 +116,7 @@ class queryForDocumentValue
     public static void main(String args[])
 	throws Throwable {
 
-	File path2DbEnv = null;
-
-	for(int i = 0; i < args.length; ++i) {
-            if (args[i].startsWith("-")) {
-		switch(args[i].charAt(1)) {
-		case 'h':
-		    path2DbEnv = new File(args[++i]);
-		    break;
-		default:
-                    usage();
-		}
-            }
-	}
+	File path2DbEnv = new File(mdConst.envHome);
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
             usage();

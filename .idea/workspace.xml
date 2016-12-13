@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6613376a-2774-43ee-9e0f-76b9c2de73fc" name="New changelist" comment="Clases de ejemplo de BDB XML">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDbEnv.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForMetaData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithContext.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/replaceIndex.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/retrieveDB.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleAdd.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleContainerInEnv.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myEnv/db/myContainer.bdbxml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEnv/__db.001" afterPath="$PROJECT_DIR$/myEnv/__db.001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEnv/__db.002" afterPath="$PROJECT_DIR$/myEnv/__db.002" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEnv/__db.003" afterPath="$PROJECT_DIR$/myEnv/__db.003" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myEnv/log.0000000001" afterPath="$PROJECT_DIR$/myEnv/log.0000000001" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java" afterPath="$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java" />
     </list>
     <list id="335cbc1b-2ec5-43af-84a2-0dafcc98f883" name="Rejected commit: New changelist" comment="Se comprueba si existe el container antes de crearlo y añadir los archivos." />
     <ignored path="BDB XML 01.iws" />
@@ -41,7 +39,80 @@
     <favorites_list name="BDB XML 01" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="buildDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-436">
+              <caret line="66" column="48" lean-forward="false" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deleteIndex.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2114">
+              <caret line="143" column="11" lean-forward="false" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryForDocumentValue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="99" column="21" lean-forward="true" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queryWithDocumentNames.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1213">
+              <caret line="108" column="89" lean-forward="false" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateDocument.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2153">
+              <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleContainerInEnv.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/simpleContainerInEnv.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleQuery.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="110" column="16" lean-forward="true" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -88,6 +159,17 @@
         <option value="$PROJECT_DIR$/src/com/bdbxml/buildDB.java" />
         <option value="$PROJECT_DIR$/src/com/bdbxml/exampleLoadContainer.java" />
         <option value="$PROJECT_DIR$/src/com/bdbxml/mdConst.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java" />
+        <option value="$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java" />
       </list>
     </option>
   </component>
@@ -143,30 +225,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BDB XML" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bdb-xml-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bdb-xml-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="bdb-xml-1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -199,7 +257,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myEnv" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -262,18 +320,98 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Ejemplo1">
-    <configuration default="false" name="Ejemplo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.updateDocument">
+    <configuration default="false" name="deleteIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.bdbxml.*" />
+          <option name="PATTERN" value="dbxml.gettingStarted.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.bdbxml.Ejemplo1" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="MAIN_CLASS_NAME" value="dbxml.gettingStarted.deleteIndex" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BDB XML 01" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="queryForDocumentValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dbxml.gettingStarted.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="dbxml.gettingStarted.queryForDocumentValue" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BDB XML 01" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="queryWithDocumentNames" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dbxml.gettingStarted.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="dbxml.gettingStarted.queryWithDocumentNames" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BDB XML 01" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="simpleQuery" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dbxml.gettingStarted.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="dbxml.gettingStarted.simpleQuery" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="BDB XML 01" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="updateDocument" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="dbxml.gettingStarted.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="dbxml.gettingStarted.updateDocument" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -464,12 +602,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.Ejemplo1" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.deleteIndex" />
+      <item index="1" class="java.lang.String" itemvalue="Application.queryForDocumentValue" />
+      <item index="2" class="java.lang.String" itemvalue="Application.queryWithDocumentNames" />
+      <item index="3" class="java.lang.String" itemvalue="Application.simpleQuery" />
+      <item index="4" class="java.lang.String" itemvalue="Application.updateDocument" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Ejemplo1" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.updateDocument" />
+        <item index="1" class="java.lang.String" itemvalue="Application.simpleQuery" />
+        <item index="2" class="java.lang.String" itemvalue="Application.queryWithDocumentNames" />
+        <item index="3" class="java.lang.String" itemvalue="Application.queryForDocumentValue" />
+        <item index="4" class="java.lang.String" itemvalue="Application.deleteIndex" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -568,7 +714,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481653808014</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Clases de ejemplo de BDB XML">
+      <created>1481653870769</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1481653870769</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -587,13 +740,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.49755502" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5067237" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.50919116" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33482644" sideWeight="0.49642858" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.4932763" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54087347" sideWeight="0.49642858" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.4908088" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,7 +763,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.49755502" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -664,70 +817,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bdbxml/Ejemplo1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1029,21 +1118,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java">
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/mdConst.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        <state relative-caret-position="272">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/exampleLoadContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="172" column="19" lean-forward="true" selection-start-line="172" selection-start-column="19" selection-end-line="172" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/myDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1565#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1253#1254#0" expanded="true" />
+            <element signature="e#1296#1297#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1364#1365#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/addIndex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1337">
-          <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+        <state relative-caret-position="1003">
+          <caret line="132" column="12" lean-forward="false" selection-start-line="132" selection-start-column="12" selection-end-line="132" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/deleteDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="192" column="4" lean-forward="false" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/buildDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-436">
+          <caret line="66" column="48" lean-forward="false" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/deleteIndex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2114">
+          <caret line="143" column="11" lean-forward="false" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/queryForDocumentValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="99" column="21" lean-forward="true" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/queryWithDocumentNames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1213">
+          <caret line="108" column="89" lean-forward="false" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/simpleContainerInEnv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/simpleQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="110" column="16" lean-forward="true" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbxml/gettingStarted/updateDocument.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2153">
+          <caret line="33" column="40" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

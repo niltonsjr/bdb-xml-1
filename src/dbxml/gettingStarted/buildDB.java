@@ -56,24 +56,12 @@ class buildDB
 		}
 	}
 
-	public static void main(String args[])
-	throws Throwable {
+	public static void main(String args[]) throws Throwable {
 
-	File path2DbEnv = null;
-	for(int i = 0; i < args.length; ++i) {
-			if ( args[i].startsWith("-") ) {
-				switch( args[i].charAt(1) ) {
-				case 'h':
-					path2DbEnv = new File(args[++i]);
-					break;
-				default:
-					usage();
-				}
-			}
-	}
+	File path2DbEnv = new File(mdConst.envHome);
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
-			usage();
+		usage();
 	}
 
 	myDbEnv env = null;
@@ -94,17 +82,14 @@ class buildDB
 		openedContainer = theMgr.openContainer(theContainer, config);
 
 		// Create a transaction, using DB.
-		Transaction dbTxn =
-		env.getEnvironment().beginTransaction(null, null);
+		Transaction dbTxn = env.getEnvironment().beginTransaction(null, null);
 		txn = theMgr.createTransaction(dbTxn);
 
 		XmlQueryContext resultsContext = theMgr.createQueryContext();
 
-		String theQuery=
-		"distinct-values(collection('namespaceExampleData.dbxml')/vendor/salesrep/name)";
+		String theQuery= "distinct-values(collection('namespaceExampleData.dbxml')/vendor/salesrep/name)";
 		//Perform the query against the XmlManager environment
-		XmlResults results = theMgr.query(txn, theQuery,
-						  resultsContext);
+		XmlResults results = theMgr.query(txn, theQuery, resultsContext);
 
 		//Pull the value out of the document query result set.
 		XmlValue value = results.next();
@@ -118,18 +103,13 @@ class buildDB
 			// information that doesn't fit into the XML document schema.
 			// In our case, we'll just put in a descriptive string so we
 			// can see what is going on when we retrieve this data.
-			String theSalesRepData =
-				"This is the data stored in the database for " +
-				theSalesRepKey + ".";
+			String theSalesRepData = "This is the data stored in the database for " + theSalesRepKey + ".";
 
-			DatabaseEntry theKey =
-				new DatabaseEntry(theSalesRepKey.getBytes());
-			DatabaseEntry theData =
-				new DatabaseEntry(theSalesRepData.getBytes());
+			DatabaseEntry theKey = new DatabaseEntry(theSalesRepKey.getBytes());
+			DatabaseEntry theData = new DatabaseEntry(theSalesRepData.getBytes());
 
 			//Finally, write the actual data to the Berkeley DB.
-			openedDatabase.getDatabase().
-			putNoOverwrite(txn.getTransaction(), theKey, theData);
+			openedDatabase.getDatabase().putNoOverwrite(txn.getTransaction(), theKey, theData);
 			value = results.next();
 		}
 		results.delete();

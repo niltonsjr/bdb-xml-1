@@ -27,13 +27,11 @@ class addIndex
 	System.exit( -1 );
     }
 
-    private static void addAnIndex( XmlContainer container, String URI,
-				    String nodeName,
-				    String indexType, XmlTransaction txn,
-				    XmlUpdateContext updateContext )
-	throws Throwable {
-	System.out.println("Adding index type " + indexType + " to node " +
-			   nodeName);
+    private static void addAnIndex(XmlContainer container, String URI, String nodeName,
+								   String indexType, XmlTransaction txn,
+								   XmlUpdateContext updateContext ) throws Throwable {
+
+	System.out.println("Adding index type " + indexType + " to node " + nodeName);
 
 	//Retrieve the index specification from the container
 	XmlIndexSpecification idxSpec = container.getIndexSpecification(txn);
@@ -43,8 +41,7 @@ class addIndex
 	System.out.println("Before index add.");
 	XmlIndexDeclaration idxDecl = null;
 	while((idxDecl = (idxSpec.next())) != null) {
-	    System.out.println("\tFor node '" + idxDecl.name + "', found index: '"
-			       + idxDecl.index + "'.");
+	    System.out.println("\tFor node '" + idxDecl.name + "', found index: '" + idxDecl.index + "'.");
 	    count ++;
 	}
 
@@ -62,8 +59,7 @@ class addIndex
 	idxSpec.reset();
 	System.out.println("After index add.");
 	while((idxDecl = ( idxSpec.next() ) ) != null) {
-	    System.out.println("\tFor node '" + idxDecl.name + "', found index: '"
-			       + idxDecl.index + "'.");
+	    System.out.println("\tFor node '" + idxDecl.name + "', found index: '" + idxDecl.index + "'.");
 	    count ++;
 	}
 	idxSpec.delete();
@@ -85,19 +81,8 @@ class addIndex
 
     public static void main(String args[])
 	throws Throwable {
-	File path2DbEnv = null;
+	File path2DbEnv = new File(mdConst.envHome);
 	String theContainer = "namespaceExampleData.dbxml";
-	for(int i = 0; i < args.length; ++i) {
-            if (args[i].startsWith("-")) {
-		switch(args[i].charAt(1)) {
-		case 'h':
-		    path2DbEnv = new File( args[++i] );
-		    break;
-		default:
-                    usage();
-		}
-            }
-	}
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
             usage();
@@ -113,8 +98,7 @@ class addIndex
 	    // open a transactional container
 	    XmlContainerConfig config = new XmlContainerConfig();
 	    config.setTransactional(true);
-	    openedContainer =
-		theMgr.openContainer(theContainer, config);
+	    openedContainer = theMgr.openContainer(theContainer, config);
 
 	    // need update context for modifications
 	    XmlUpdateContext uc = theMgr.createUpdateContext();
@@ -123,11 +107,9 @@ class addIndex
 	    txn = theMgr.createTransaction();
 
 	    //Add an string equality index for the "product" element node.
-	    addAnIndex( openedContainer, "", "product",
-			"node-element-equality-string", txn, uc );
+	    addAnIndex( openedContainer, "", "product", "node-element-equality-string", txn, uc );
             //Add an edge presence index for the product node
-	    addAnIndex( openedContainer, "", "product", "edge-element-presence",
-			txn, uc );
+	    addAnIndex( openedContainer, "", "product", "edge-element-presence", txn, uc );
 
 	    //Commit the index adds
 	    txn.commit();
@@ -141,7 +123,7 @@ class addIndex
 	    // The database is left in the same state as it was in before
 	    // we started this operation.
 	    if ( txn != null ) {
-		txn.abort();
+	    	txn.abort();
 	    }
 	    throw e;
 	}

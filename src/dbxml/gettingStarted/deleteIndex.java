@@ -36,8 +36,7 @@ class deleteIndex
 				       String URI, String nodeName,
 				       String indexType, XmlTransaction txn )
 	throws Throwable {
-	System.out.println("Deleting index type " + indexType + " from node "
-			   + nodeName);
+	System.out.println("Deleting index type " + indexType + " from node " + nodeName);
 
 	//Retrieve the index specification from the container
 	XmlIndexSpecification idxSpec = container.getIndexSpecification(txn);
@@ -91,56 +90,44 @@ class deleteIndex
     public static void main(String args[])
 	throws Throwable {
 
-       File path2DbEnv = null;
-
-       for(int i = 0; i < args.length; ++i) {
-	   if (args[i].startsWith("-")) {
-               switch(args[i].charAt(1)) {
-	       case 'h':
-		   path2DbEnv = new File(args[++i]);
-		   break;
-	       default:
-		   usage();
-               }
-	   }
-       }
+       File path2DbEnv = new File(mdConst.envHome);
 
        if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
-	   usage();
+       	usage();
        }
 
        myDbEnv env = null;
        XmlContainer openedContainer = null;
        XmlTransaction txn = null;
+
        try {
-	    env = new myDbEnv(path2DbEnv);
-	    XmlManager theMgr = env.getManager();
+           env = new myDbEnv(path2DbEnv);
+           XmlManager theMgr = env.getManager();
 
-	    // open a transactional container
-	    XmlContainerConfig config = new XmlContainerConfig();
-	    config.setTransactional(true);
-	    openedContainer =
-		theMgr.openContainer(theContainer, config);
+           // open a transactional container
+           XmlContainerConfig config = new XmlContainerConfig();
+           config.setTransactional(true);
+           openedContainer = theMgr.openContainer(theContainer, config);
 
-	    // Start a transaction
-	    txn = theMgr.createTransaction();
+           // Start a transaction
+           txn = theMgr.createTransaction();
 
-	    //Delete an string equality index for the "product" element node.
-	    deleteAnIndex(theMgr, openedContainer, "", "product",
-			"node-element-equality-string", txn);
+           //Delete an string equality index for the "product" element node.
+           deleteAnIndex(theMgr, openedContainer, "", "product", "node-element-equality-string", txn);
 
-	    //Perform the deletes in two different transactions for
-	    // no particular reason
+           //Perform the deletes in two different transactions for
+           // no particular reason
 
-	    //Commit the index delete
-	    txn.commit();
-	    txn = theMgr.createTransaction();
-	    //Delete an edge presence index for the product node
-	    deleteAnIndex(theMgr, openedContainer, "", "product",
-			"edge-element-presence-none", txn);
+           //Commit the index delete
+           txn.commit();
+           txn = theMgr.createTransaction();
 
-	    //Commit the index delete
-	    txn.commit();
+           //Delete an edge presence index for the product node
+           deleteAnIndex(theMgr, openedContainer, "", "product", "edge-element-presence-none", txn);
+
+           //Commit the index delete
+           txn.commit();
+
        } catch (Exception e) {
            System.err.println("Error deleting indexes from container "
 			      + theContainer );
@@ -149,12 +136,12 @@ class deleteIndex
            // The database is left in the same state as it was in before
            // we started this operation.
            if ( txn != null ) {
-	       txn.abort();
+               txn.abort();
            }
            throw e;
        }
        finally {
-	   cleanup(env, openedContainer);
+           cleanup(env, openedContainer);
        }
     } //End main
 }

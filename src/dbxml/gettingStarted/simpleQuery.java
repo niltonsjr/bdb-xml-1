@@ -69,18 +69,7 @@ class simpleQuery
     public static void main(String args[])
 	throws Throwable {
 
-	File path2DbEnv = null;
-	for(int i = 0; i < args.length; ++i) {
-            if (args[i].startsWith("-")) {
-		switch(args[i].charAt(1)) {
-		case 'h':
-		    path2DbEnv = new File(args[++i]);
-		    break;
-		default:
-                    usage();
-		}
-            }
-	}
+	File path2DbEnv = new File(mdConst.envHome);
 
 	if (path2DbEnv == null || ! path2DbEnv.isDirectory()) {
             usage();

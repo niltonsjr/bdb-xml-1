@@ -13,6 +13,8 @@ public class mdConst
    public static String uri = new String("http://dbxmlExamples/timestamp");
    public static String prefix = new String("time");
    public static String name = new String("timeStamp");
+   public static String dataPath = new String("data/");
+   public static String envHome = new String ("myEnv/");
 
 }
 
